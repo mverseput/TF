@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for training in trainingen%}
+        {{ training.image }}<br>
+        {{ training.name }}<br>
+        {{ training.description }}<br><br>
+    {% endfor %}
+{% endblock %}

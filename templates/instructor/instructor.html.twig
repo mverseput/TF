@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Instructor{% endblock %}
+
+{% block body %}
+    <h1>Instructor</h1>
+
+    <h2>Lessons</h2>
+
+    {% for lesson in lessons %}
+        <div>{{ lesson.id }} - {{ lesson.date|date('Y-m-d') }} - {{ lesson.time|date('H:i') }}</div>
+        {% if app.user and 'ROLE_INSTRUCTOR' in app.user.roles %}
+            <a href="{{ path('app_update_lesson', { id: lesson.id }) }}" class="btn btn-primary">Update Lesson</a>
+        {% endif %}
+    {% endfor %}
+
+    <a href="{{ path('app_create_lesson') }}" class="btn btn-primary">Create Lesson</a>
+{% endblock %}

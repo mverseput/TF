@@ -1,0 +1,72 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Customer Profile{% endblock %}
+
+{% block body %}
+    <h1>Customer Profile</h1>
+
+   {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <button type="submit" class="btn btn-primary">Update Profile</button>
+    {{ form_end(form) }}
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Customer Profile{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-4">Member Profile</h1>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+                <div class="mb-3">
+                    {{ form_label(form.firstname, 'First Name') }}
+                    {{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Enter your first name'}}) }}
+                    {{ form_errors(form.firstname) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.lastname, 'Last Name') }}
+                    {{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Enter your last name'}}) }}
+                    {{ form_errors(form.lastname) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.plain_password, 'Password') }}
+                    {{ form_widget(form.plain_password, {'attr': {'class': 'form-control', 'placeholder': 'Enter your password'}}) }}
+                    {{ form_errors(form.plain_password) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.street, 'Street') }}
+                    {{ form_widget(form.street, {'attr': {'class': 'form-control', 'placeholder': 'Enter your street'}}) }}
+                    {{ form_errors(form.street) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_label(form.place, 'Place') }}
+                    {{ form_widget(form.place, {'attr': {'class': 'form-control', 'placeholder': 'Enter your place'}}) }}
+                    {{ form_errors(form.place) }}
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Lesson{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Create Lesson</h1>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.time, 'Time') }}
+                    {{ form_widget(form.time, {'attr': {'class': 'form-control', 'placeholder': 'Enter the time'}}) }}
+                    {{ form_errors(form.time) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.date, 'Date') }}
+                    {{ form_widget(form.date, {'attr': {'class': 'form-control', 'placeholder': 'Enter the date'}}) }}
+                    {{ form_errors(form.date) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.location, 'Location') }}
+                    {{ form_widget(form.location, {'attr': {'class': 'form-control', 'placeholder': 'Enter the location'}}) }}
+                    {{ form_errors(form.location) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.max_persons, 'Max Persons') }}
+                    {{ form_widget(form.max_persons, {'attr': {'class': 'form-control', 'placeholder': 'Enter the max persons'}}) }}
+                    {{ form_errors(form.max_persons) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.training, 'Training') }}
+                    {{ form_widget(form.training, {'attr': {'class': 'form-control', 'placeholder': 'Enter the training'}}) }}
+                    {{ form_errors(form.training) }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

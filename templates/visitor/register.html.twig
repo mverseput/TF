@@ -1,0 +1,58 @@
+{# templates/visitor/register.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Register
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1 class="mt-4">Visitor Registratie</h1>
+
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				{{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+				<div class="row mb-3">
+					<div class="col">
+						{{ form_label(form.firstname, 'Voornaam') }}
+						{{ form_widget(form.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw voornaam in'}}) }}
+						{{ form_errors(form.firstname) }}
+					</div>
+					<div class="col">
+						{{ form_label(form.lastname, 'Last Name') }}
+						{{ form_widget(form.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw achternaam in'}}) }}
+						{{ form_errors(form.lastname) }}
+					</div>
+					<div class="col">
+						{{ form_label(form.birthdate, 'Geboorte Datum') }}
+						{{ form_widget(form.birthdate, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw geboorte datum in'}}) }}
+						{{ form_errors(form.birthdate) }}
+					</div>
+				</div>
+				<div class="mb-3">
+					{{ form_label(form.email, 'Email') }}
+					{{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw email in'}}) }}
+					{{ form_errors(form.email) }}
+				</div>
+				<div class="mb-3">
+					{{ form_label(form.plain_password, 'Password') }}
+					{{ form_widget(form.plain_password, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw wachtwoord in'}}) }}
+					{{ form_errors(form.plain_password) }}
+				</div>
+				<div class="mb-3">
+					{{ form_label(form.street, 'Street') }}
+					{{ form_widget(form.street, {'attr': {'class': 'form-control', 'placeholder': 'Vul straatnaam in'}}) }}
+					{{ form_errors(form.street) }}
+				</div>
+				<div class="mb-3">
+					{{ form_label(form.place, 'Place') }}
+					{{ form_widget(form.place, {'attr': {'class': 'form-control', 'placeholder': 'Vul uw stad in'}}) }}
+					{{ form_errors(form.place) }}
+				</div>
+
+				<button type="submit" class="btn btn-primary">Registreer</button>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
